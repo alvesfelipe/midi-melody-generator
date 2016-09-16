@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <pstream.h>
+#include <python2.7/Python.h>
 
 using namespace std;
 
