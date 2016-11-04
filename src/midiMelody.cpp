@@ -7,8 +7,8 @@ bool MidiMelody::melodyGenerator(string out_name, string audio_path, string out_
 	//File archive to handle Python py files
 	FILE* file;
 	//Get Home FilePath
-	char const* tmp_home = getenv("HOME");
-	string home(tmp_home);
+	char const* auris_aux_home = getenv("AURIS_HOME_PATH");
+	string auris_home(auris_aux_home);
 	//Variables used by Python.h functions.
 	int argc = 4;
 	char* argv[argc];
@@ -35,7 +35,7 @@ bool MidiMelody::melodyGenerator(string out_name, string audio_path, string out_
 	PySys_SetArgv(argc, argv);
 
 	//Open Python file
-	string lib_path = "" + home + "/MUSIC_DEAF/music_for_deaf/auris-core/midi-melody-generator/lib/audio_to_midi_melodia-master/audio_to_midi_melodia.py"; //Get Python File Path
+	string lib_path = "" + auris_home + "/auris-core/midi-melody-generator/lib/audio_to_midi_melodia-master/audio_to_midi_melodia.py"; //Get Python File Path
 	const char* path_c = lib_path.c_str(); //Convert from string to const char*
 	file = fopen(path_c,"r");
 	//If file cannot be found
